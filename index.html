@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Ultra-Modern | SAFARI MWAMBI KADIMA</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+<style>
+/* ----------------- Animations ----------------- */
+.fade-in { opacity: 0; animation: fadeIn 1.5s forwards; }
+@keyframes fadeIn { to { opacity: 1; } }
+
+.slide-up { transform: translateY(50px); opacity: 0; animation: slideUp 1s forwards; }
+@keyframes slideUp { to { transform: translateY(0); opacity: 1; } }
+
+.scale-hover:hover { transform: scale(1.05); transition: all 0.5s; }
+
+/* Background dégradé animé */
+.animated-bg {
+    background: linear-gradient(270deg, #ff7e5f, #feb47b, #86a8e7, #91eae4);
+    background-size: 800% 800%;
+    animation: gradientBG 20s ease infinite;
+}
+@keyframes gradientBG {
+    0% {background-position:0% 50%;}
+    50% {background-position:100% 50%;}
+    100% {background-position:0% 50%;}
+}
+
+/* Parallaxe légère */
+.parallax { transform: translateZ(0); perspective: 1px; }
+
+/* Menu mobile animation */
+#mobile-menu { transition: max-height 0.5s ease; overflow: hidden; }
+
+/* Smooth scroll */
+html { scroll-behavior: smooth; }
+</style>
+</head>
+
+<body class="animated-bg font-sans text-gray-900">
+
+<!-- ----------------- Navbar Hamburger ----------------- -->
+<nav class="fixed top-0 left-0 w-full bg-white/70 backdrop-blur-md shadow-md z-50">
+<div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+    <div class="text-2xl font-bold text-indigo-700">SAFARI KADIMA</div>
+    
+    <!-- Menu desktop -->
+    <ul class="hidden md:flex space-x-6">
+        <li><a href="#about" class="hover:text-indigo-500 transition">À propos</a></li>
+        <li><a href="#skills" class="hover:text-indigo-500 transition">Compétences</a></li>
+        <li><a href="#experience" class="hover:text-indigo-500 transition">Formation</a></li>
+        <li><a href="#portfolio" class="hover:text-indigo-500 transition">Expériences</a></li>
+        <li><a href="#contact" class="hover:text-indigo-500 transition">Contact</a></li>
+    </ul>
+
+    <!-- Hamburger mobile -->
+    <div class="md:hidden flex items-center">
+        <button id="hamburger" class="text-2xl text-indigo-700 focus:outline-none">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</div>
+
+<!-- Menu mobile déroulant -->
+<div id="mobile-menu" class="hidden md:hidden bg-white/90 backdrop-blur-md">
+    <ul class="flex flex-col p-4 space-y-4 text-lg">
+        <li><a href="#about" class="hover:text-indigo-500 transition">À propos</a></li>
+        <li><a href="#skills" class="hover:text-indigo-500 transition">Compétences</a></li>
+        <li><a href="#experience" class="hover:text-indigo-500 transition">Formation</a></li>
+        <li><a href="#portfolio" class="hover:text-indigo-500 transition">Expériences</a></li>
+        <li><a href="#contact" class="hover:text-indigo-500 transition">Contact</a></li>
+    </ul>
+</div>
+</nav>
+
+<!-- ----------------- Section Profil ----------------- -->
+<section id="about" class="min-h-screen flex flex-col md:flex-row items-center justify-center p-8 gap-10 mt-20 parallax">
+<div class="w-64 md:w-96 fade-in">
+    <img src="./profil.jpg" alt="SAFARI MWAMBI KADIMA"
+    class="rounded-full shadow-2xl border-4 border-indigo-500 scale-hover">
+</div>
+<div class="max-w-2xl slide-up">
+    <h1 class="text-4xl md:text-6xl font-bold text-indigo-700 mb-4">SAFARI MWAMBI KADIMA</h1>
+    <p class="text-lg md:text-xl mb-2"><strong>Contact:</strong> +243999289714 | <strong>Email:</strong> safardolafoudre3@gmail.com</p>
+    <p class="text-md md:text-lg mb-4"><strong>Objectif:</strong> Rechercher un poste qui me permet de mettre en valeur mes compétences et de contribuer au développement de l'entreprise.</p>
+    <div class="flex space-x-4 mt-4 text-2xl">
+        <a href="https://www.facebook.com/ericnyongolo44" target="_blank" class="text-blue-600 hover:scale-125 transition"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.linkedin.com/in/eric-mugisho-nyongolo-847421319" target="_blank" class="text-blue-800 hover:scale-125 transition"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://x.com/eric_nyongolo" target="_blank" class="text-blue-400 hover:scale-125 transition"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/eric-mugisho-nyongolo-847421319" target="_blank" class="text-pink-500 hover:scale-125 transition"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/254731771005" target="_blank" class="text-green-500 hover:scale-125 transition"><i class="fab fa-whatsapp"></i></a>
+    </div>
+</div>
+</section>
+
+<!-- Script Hamburger -->
+<script>
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    hamburger.querySelector('i').classList.toggle('fa-bars');
+    hamburger.querySelector('i').classList.toggle('fa-times');
+});
+</script>
+
+<!-- ----------------- Compétences ----------------- -->
+<section id="skills" class="min-h-screen p-12 bg-white/90 backdrop-blur-md parallax">
+<h2 class="text-4xl font-bold text-indigo-700 mb-8 text-center slide-up">Compétences</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center slide-up">
+    <div class="bg-indigo-100 p-6 rounded-xl shadow-lg scale-hover transition transform">
+        <i class="fas fa-laptop-code text-4xl text-indigo-700 mb-4"></i>
+        <p>Informaticien</p>
+    </div>
+    <div class="bg-indigo-100 p-6 rounded-xl shadow-lg scale-hover transition transform">
+        <i class="fas fa-hand-holding-usd text-4xl text-indigo-700 mb-4"></i>
+        <p>Commerçant</p>
+    </div>
+    <div class="bg-indigo-100 p-6 rounded-xl shadow-lg scale-hover transition transform">
+        <i class="fas fa-car text-4xl text-indigo-700 mb-4"></i>
+        <p>Chauffeur</p>
+    </div>
+    <div class="bg-indigo-100 p-6 rounded-xl shadow-lg scale-hover transition transform">
+        <i class="fas fa-paint-brush text-4xl text-indigo-700 mb-4"></i>
+        <p>Designer graphique</p>
+    </div>
+</div>
+</section>
+
+<!-- ----------------- Langues ----------------- -->
+<section id="languages" class="min-h-screen p-12 bg-indigo-50 parallax">
+<h2 class="text-4xl font-bold text-indigo-700 mb-8 text-center fade-in">Langues</h2>
+<div class="max-w-2xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 slide-up">
+    <div class="bg-white p-6 rounded-xl shadow-lg text-center">
+        <p class="text-lg font-semibold">Français</p>
+        <div class="w-full bg-gray-200 h-4 rounded-full mt-2">
+            <div class="bg-indigo-600 h-4 rounded-full w-4/5 transition-all"></div>
+        </div>
+    </div>
+    <div class="bg-white p-6 rounded-xl shadow-lg text-center">
+        <p class="text-lg font-semibold">Swahili</p>
+        <div class="w-full bg-gray-200 h-4 rounded-full mt-2">
+            <div class="bg-indigo-600 h-4 rounded-full w-4/5 transition-all"></div>
+        </div>
+    </div>
+    <div class="bg-white p-6 rounded-xl shadow-lg text-center">
+        <p class="text-lg font-semibold">Anglais</p>
+        <div class="w-full bg-gray-200 h-4 rounded-full mt-2">
+            <div class="bg-indigo-600 h-4 rounded-full w-2/5 transition-all"></div>
+        </div>
+    </div>
+    <div class="bg-white p-6 rounded-xl shadow-lg text-center">
+        <p class="text-lg font-semibold">Lingala</p>
+        <div class="w-full bg-gray-200 h-4 rounded-full mt-2">
+            <div class="bg-indigo-600 h-4 rounded-full w-4/5 transition-all"></div>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- ----------------- Références ----------------- -->
+<section id="references" class="min-h-screen p-12 bg-white/80 backdrop-blur-md parallax">
+<h2 class="text-4xl font-bold text-indigo-700 mb-8 text-center slide-up">Références</h2>
+<div class="space-y-6 max-w-4xl mx-auto slide-up">
+    <div class="bg-indigo-50 p-6 rounded-xl shadow-lg hover:shadow-2xl scale-hover transition duration-500">
+        <p><strong>Eric Nyongolo</strong>, le dieu en informatique | <strong>Tel:</strong> +243977975144</p>
+    </div>
+    <div class="bg-indigo-50 p-6 rounded-xl shadow-lg hover:shadow-2xl scale-hover transition duration-500">
+        <p><strong>Jean Mushagalusa</strong>, secrétaire public</p>
+    </div>
+</div>
+</section>
+
+<!-- ----------------- Portfolio Expériences ----------------- -->
+<section id="portfolio" class="min-h-screen p-12 bg-indigo-100 parallax">
+<h2 class="text-4xl font-bold text-indigo-700 mb-8 text-center fade-in">Expériences Professionnelles</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 slide-up max-w-6xl mx-auto">
+    <!-- Exemple à remplacer avec vos photos -->
+    <div class="bg-white p-4 rounded-xl shadow-lg hover:shadow-2xl scale-hover transition transform">
+        <img src=".projet1.jpg" alt="Experience 1" class="rounded-lg mb-4">
+        <h3 class="text-xl font-semibold text-indigo-700">Expérience 1</h3>
+        <p class="text-gray-700">Description de l'expérience professionnelle ici.</p>
+    </div>
+    <div class="bg-white p-4 rounded-xl shadow-lg hover:shadow-2xl scale-hover transition transform">
+        <img src="projet2.jpg" alt="Experience 2" class="rounded-lg mb-4">
+        <h3 class="text-xl font-semibold text-indigo-700">Expérience 2</h3>
+        <p class="text-gray-700">Description de l'expérience professionnelle ici.</p>
+    </div>
+    <div class="bg-white p-4 rounded-xl shadow-lg hover:shadow-2xl scale-hover transition transform">
+        <img src="projet3.jpg" alt="Experience 3" class="rounded-lg mb-4">
+        <h3 class="text-xl font-semibold text-indigo-700">Expérience 3</h3>
+        <p class="text-gray-700">Description de l'expérience professionnelle ici.</p>
+    </div>
+</div>
+</section>
+
+<!-- ----------------- Formulaire Contact ----------------- -->
+<section id="contact" class="min-h-screen p-12 bg-indigo-50 parallax">
+<h2 class="text-4xl font-bold text-indigo-700 mb-12 text-center fade-in">Contactez-moi</h2>
+<div class="max-w-3xl mx-auto bg-white p-10 rounded-xl shadow-2xl slide-up">
+    <form id="contact-form" class="space-y-6">
+        <div>
+            <label for="name" class="block mb-2 font-semibold">Nom</label>
+            <input type="text" id="name" name="user_name" required
+            class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+        </div>
+        <div>
+            <label for="email" class="block mb-2 font-semibold">Email</label>
+            <input type="email" id="email" name="user_email" required
+            class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+        </div>
+        <div>
+            <label for="message" class="block mb-2 font-semibold">Message</label>
+            <textarea id="message" name="message" rows="6" required
+            class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+        </div>
+        <button type="submit"
+        class="bg-indigo-700 text-white px-6 py-3 rounded-lg font-bold hover:bg-indigo-600 transition transform hover:scale-105">
+        Envoyer
+        </button>
+    </form>
+    <p id="form-status" class="mt-4 text-center text-green-600 font-semibold hidden">Message envoyé avec succès !</p>
+</div>
+</section>
+
+<!-- ----------------- Footer ----------------- -->
+<footer class="bg-white/80 backdrop-blur-md p-12 mt-12">
+<div class="max-w-7xl mx-auto text-center space-y-6">
+    <h3 class="text-2xl font-bold text-indigo-700">SAFARI MWAMBI KADIMA</h3>
+    <p class="text-gray-700">Kamanyola, Sud-Kivu, RDC | +243999289714 | safardolafoudre3@gmail.com</p>
+    <div class="flex justify-center space-x-6 text-xl">
+        <a href="https://www.facebook.com/ericnyongolo44" target="_blank" class="text-blue-600 hover:scale-125 transition"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.linkedin.com/in/eric-mugisho-nyongolo-847421319" target="_blank" class="text-blue-800 hover:scale-125 transition"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://x.com/eric_nyongolo" target="_blank" class="text-blue-400 hover:scale-125 transition"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/eric-mugisho-nyongolo-847421319" target="_blank" class="text-pink-500 hover:scale-125 transition"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/254731771005" target="_blank" class="text-green-500 hover:scale-125 transition"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <p class="text-gray-500 mt-4">Créé par Eric Nyongolo &copy; 2026</p>
+</div>
+</footer>
+
+<!-- ----------------- Scripts ----------------- -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+emailjs.init('TjkCId0W-N5zoqNhu'); // PUBLIC KEY
+
+// Contact form EmailJS
+const form = document.getElementById('contact-form');
+const status = document.getElementById('form-status');
+form.addEventListener('submit', function(e){
+    e.preventDefault();
+    emailjs.sendForm('service_ccn8jkt', 'template_qkbagyj', this)
+        .then(() => {
+            status.classList.remove('hidden');
+            form.reset();
+            setTimeout(()=> status.classList.add('hidden'),5000);
+        }, (err)=> alert("Erreur: "+JSON.stringify(err)));
+});
+</script>
+
+<!-- ----------------- Background dynamique ----------------- -->
+<div class="fixed top-0 left-0 w-full h-full -z-10">
+    <canvas id="backgroundCanvas" class="w-full h-full"></canvas>
+</div>
+
+<script>
+const canvas = document.getElementById('backgroundCanvas');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+const colors = ['#ff7e5f','#feb47b','#86a8e7','#91eae4'];
+for(let i=0;i<100;i++){
+    particles.push({
+        x: Math.random()*canvas.width,
+        y: Math.random()*canvas.height,
+        r: Math.random()*3+1,
+        dx: (Math.random()-0.5)*2,
+        dy: (Math.random()-0.5)*2,
+        color: colors[Math.floor(Math.random()*colors.length)]
+    });
+}
+
+function animateParticles(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(p=>{
+        ctx.beginPath();
+        ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+        ctx.fillStyle=p.color;
+        ctx.fill();
+        p.x+=p.dx; p.y+=p.dy;
+        if(p.x>canvas.width||p.x<0)p.dx*=-1;
+        if(p.y>canvas.height||p.y<0)p.dy*=-1;
+    });
+    requestAnimationFrame(animateParticles);
+}
+animateParticles();
+window.addEventListener('resize',()=>{
+    canvas.width=window.innerWidth;
+    canvas.height=window.innerHeight;
+});
+</script>
+
+<!-- ----------------- Animations supplémentaires pour sections ----------------- -->
+<script>
+const sections = document.querySelectorAll('section');
+const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add('slide-up','fade-in');
+        }
+    });
+}, {threshold:0.3});
+sections.forEach(section => observer.observe(section));
+</script>
+
+<!-- ----------------- Hover interactif sur portfolio ----------------- -->
+<script>
+const portfolioItems = document.querySelectorAll('#portfolio .scale-hover');
+portfolioItems.forEach(item=>{
+    item.addEventListener('mousemove',(e)=>{
+        const rect = item.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const cx = rect.width/2;
+        const cy = rect.height/2;
+        const dx = (x-cx)/cx;
+        const dy = (y-cy)/cy;
+        item.style.transform = `rotateY(${dx*10}deg) rotateX(${-dy*10}deg) scale(1.05)`;
+    });
+    item.addEventListener('mouseleave',()=>{
+        item.style.transform = 'rotateY(0deg) rotateX(0deg) scale(1)';
+    });
+});
+</script>
+
+<!-- ----------------- Parallaxe sur images de portfolio ----------------- -->
+<script>
+window.addEventListener('scroll',()=>{
+    const portfolioImages = document.querySelectorAll('#portfolio img');
+    portfolioImages.forEach(img=>{
+        const speed = 0.3;
+        const offset = window.scrollY*speed;
+        img.style.transform = `translateY(${offset}px)`;
+    });
+});
+</script>
+
+<!-- ----------------- Instructions pour dupliquer le template ----------------- -->
+<!--
+Pour générer plusieurs pages :
+1. Duplique ce fichier HTML.
+2. Modifie uniquement le contenu des sections (#portfolio, #experience, #skills).
+3. Laisse les scripts et la navbar intacts pour garder le design moderne.
+4. Chaque page peut avoir son propre CSS inline ou Tailwind, mais la plupart du code est réutilisable.
+-->
+</body>
+</html>
